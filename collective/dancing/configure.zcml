@@ -51,13 +51,6 @@
 
   <!-- Make this package a Zope 2 product -->
   <five:registerPackage package="." initialize=".initialize" />
-  <include package="collective.monkeypatcher" />
-  <monkey:patch
-     description="patch ATTopic to allow overriding *all* of the query that it builds by providing keyword arguments."
-     class="Products.ATContentTypes.content.topic.ATTopic"
-     original="queryCatalog"
-     replacement=".patch.topic.queryCatalog"
-  />
 
   <i18n:registerTranslations directory="locales"/>
 
